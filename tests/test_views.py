@@ -7,4 +7,4 @@ class MenuViewTest(TestCase):
         MenuItem.objects.create(name='IceCream', price=12.99, inventory=100)
     def test_getall(self):
         items = MenuItem.objects.all()
-        self.assertIsNotNone(items)
+        self.assertIsInstance(items, QuerySet)

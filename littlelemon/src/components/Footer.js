@@ -1,12 +1,14 @@
 import Logo from '../images/littleLemonfooterLogo.png'
 function Footer(){
     return (
-        <footer>
-            <img src={Logo} alt='Little Lemon Footer Logo'/>
+        <footer id='footer'>
             <article>
                 <section>
+                    <img src={Logo} alt='Little Lemon Footer Logo'/>
+                </section>
+                <section>
                     <nav>
-                        <header>NAVIGATION</header>
+                        <h3>NAVIGATION</h3>
                         <ul>
                             <li>
                                 <a href='#home'>Home</a>
@@ -31,7 +33,7 @@ function Footer(){
                 </section>
                 <section>
                     <nav>
-                        <header>CONTACT</header>
+                        <h3>CONTACT US</h3>
                         <ul>
                             <li>
                                 <a href='#address'>Address</a>
@@ -47,7 +49,7 @@ function Footer(){
                 </section>
                 <section>
                     <nav>
-                        <header>Social Media</header>
+                        <h3>SOCIAL MEDIA</h3>
                         <ul>
                             <li>
                                 <a href='https://linkedin.com'>LinkedIn</a>
@@ -68,4 +70,4 @@ function Footer(){
         </footer>
     )
 }
-export default Footer 
+export default Footer;

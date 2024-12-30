@@ -1,38 +1,225 @@
-.App {
-  text-align: center;
+*{
+  padding:0;
+  margin:0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1, h2 {
+  font-family: "Markazi Text";
+  font-style:none;
+  text-decoration:none;
+  margin:1rem;
+  line-height: 75%;
+  padding:0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  font-weight: 300;
+  font-size: 64px;
+  width:fit-content;
+  margin-bottom:0;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+h2{
+  font-weight: 200;
+  font:weight normal;
+  font-size: 40px;
+  margin-top:0;
+}
+li{
+  list-style-type:none;
+  padding:0;
+  margin:0;
+}
+li a{
+  color:#333333;
+  font-family:'Karla';
+  font-weight: 300;
+  font-size:18px;
+  text-decoration:none;
+  margin:1rem;
+}
+li a:link{
+  color:#333333;
+}
+li a:visited{
+  color:#333333;
+}
+p.leadText{
+  font-family:'Karla';
+  font-size:18px;
+  font-weight: 300;
+  max-width: 35ch;
+  margin:1rem;
+  color:#efefee;
+}
+button{
+  padding:1rem;
+  margin:1rem;
+  max-width: fit-content;
+  border:none;
+  border-radius:16px;
+  color:#333333;
+  font-size:18px;
+  font-family:"karla";
+  font-weight:300;
+  background-color: #F4CE14;
+}
+#root {
+  display:grid;
+  grid-template-areas:'nav nav nav'
+                      'head head head'
+                      'main main main'
+                      'footer footer footer';
+  grid-template-rows: min-content 1fr 2fr 1fr;
+  grid-template-columns: 10px 1fr 10px;
+  min-height:100vh;
+  background-color:#edefee;
+}
+#nav {
+  grid-area:nav;
+  width:100%;
+  background-color:#edefee;
+  height:fit-content
+}
+#nav > article,
+#head > article,
+#footer > article,
+#highlights > article,
+#testimonials > article,
+#about > article,
+#footer > article {
+  display:flex;
+  flex-flow:row wrap;
+  align-items:center;
+  justify-content:space-between;
+  margin:0 auto 0 auto;
+  max-width:900px;
+}
+#footer > article{
+   align-items:start
+}
+#nav img{
+  object-fit:cover;
+  height: 64px;
+}
+#nav ul {
+  display:flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-flow:wrap;
 }
-
-.App-link {
-  color: #61dafb;
+#head {
+  grid-area:head;
+  background:#495e57;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#head img {
+  margin:0 1rem 1rem 1rem;
+  border-radius:16px;
+  width:280px;
+  height:364px;
+  object-fit:cover;
+  transform:translate3d(0,2.5rem,0)
+}
+#head h1 {
+  color:#F4CE14;
+}
+#head h2 {
+  color:#FBDABB;
+}
+#main{
+  grid-area:main;
+  display:grid;
+  grid-template-areas: 'high'
+                       'test'
+                       'about';
+  grid-template-columns: 100%;
+  grid-template-rows:fit-content fill fit-content;
+}
+#highlights{
+  grid-area:high;
+  background-color:#edefee;
+  margin-top:1rem
+}
+#highlights h1{
+  color:#495e57;
+}
+#highlights > article > section{
+  display:flex;
+  flex-flow:row wrap;
+  justify-content:space-between;
+  width:100vw;
+}
+#testimonials{
+  grid-area:test;
+  background-color:#F4CE14;
+}
+#testimonials h1{
+  color:#495e57;
+}
+#about {
+  grid-area:about;
+}
+#about h1{
+  color:#495e57;
+}
+#about h2{
+  color:#F4CE14
+}
+#about p.leadText{
+  color:#333333;
+}
+#about aside{
+  position:relative;
+  display:flex;
+  width:320px;
+  height:364px;
+}
+#about img{
+  width:200px;
+  height:300px;
+  object-fit:cover;
+  border-radius:16px;
+  margin:1rem 1rem 3rem 6.5rem
+}
+#about img:nth-child(1){
+  position:absolute;
+  z-index:1;
+}
+#about img:nth-child(2){
+  z-index:0;
+  transform:translate3d(-5.5rem,2rem,0) rotateY(180deg);
+}
+#footer{
+  grid-area:footer;
+  background-color:#495e57;
+  padding-bottom:2rem;
+}
+#footer article{
+  display:flex;
+  flex-flow:row wrap;
+  justify-content:start;
+}
+#footer section{
+  height:fit-content;
+  margin:1rem;
+}
+#footer h3{
+  text-decoration:none;
+  font-size:20px;
+  font-weight:'Karla';
+  font-weight:500;
+  line-height:1.5rem;
+  margin:0;
+  color:#F4CE14
+}
+#footer img{
+  margin:0;
+  width:107px;
+}
+#footer ul {
+  line-height:1.5rem;
+  min-width:107px;
+}
+#footer li{
+  list-style-type:none;
+}
+#footer a{
+  color:#edefee;
+  margin:0;
 }

@@ -2,7 +2,7 @@
   padding:0;
   margin:0;
 }
-h1, h2 {
+h1, h2{
   font-family: "Markazi Text";
   font-style:none;
   text-decoration:none;
@@ -10,7 +10,7 @@ h1, h2 {
   line-height: 75%;
   padding:0;
 }
-h1 {
+h1{
   font-weight: 300;
   font-size: 64px;
   width:fit-content;
@@ -61,7 +61,7 @@ button{
   font-weight:300;
   background-color: #F4CE14;
 }
-#root {
+#root{
   display:grid;
   grid-template-areas:'nav nav nav'
                       'head head head'
@@ -72,7 +72,7 @@ button{
   min-height:100vh;
   background-color:#edefee;
 }
-#nav {
+#nav{
   grid-area:nav;
   width:100%;
   background-color:#edefee;
@@ -84,7 +84,7 @@ button{
 #highlights > article,
 #testimonials > article,
 #about > article,
-#footer > article {
+#footer > article{
   display:flex;
   flex-flow:row wrap;
   align-items:center;
@@ -99,16 +99,16 @@ button{
   object-fit:cover;
   height: 64px;
 }
-#nav ul {
+#nav ul{
   display:flex;
   align-items: center;
   flex-flow:wrap;
 }
-#head {
+#head{
   grid-area:head;
   background:#495e57;
 }
-#head img {
+#head img{
   margin:0 1rem 1rem 1rem;
   border-radius:16px;
   width:280px;
@@ -116,10 +116,10 @@ button{
   object-fit:cover;
   transform:translate3d(0,2.5rem,0)
 }
-#head h1 {
+#head h1{
   color:#F4CE14;
 }
-#head h2 {
+#head h2{
   color:#FBDABB;
 }
 #main{
@@ -152,7 +152,7 @@ button{
 #testimonials h1{
   color:#495e57;
 }
-#about {
+#about{
   grid-area:about;
 }
 #about h1{
@@ -212,7 +212,7 @@ button{
   margin:0;
   width:107px;
 }
-#footer ul {
+#footer ul{
   line-height:1.5rem;
   min-width:107px;
 }

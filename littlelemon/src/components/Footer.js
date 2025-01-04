@@ -11,7 +11,7 @@ function Footer(){
                         <h3>NAVIGATION</h3>
                         <ul>
                             <li>
-                                <a href='#home'>Home</a>
+                                <a href='/'>Home</a>
                             </li>
                             <li>
                                 <a href='#about'>About</a>

@@ -1,17 +1,19 @@
 import imga from '../images/Mario and Adrian A.jpg'
 import imgb from '../images/Mario and Adrian b.jpg'
+import  MenuItemList from './partials/MenuItem'
+import ReviewItemList from './partials/ReviewItem'
 function Main(){
     return (
         <main id='main'>
             <article>
                 <section id='highlights'>
-                    <article>
+                    <article id='menu'>
                         <section>
                             <h1>This Week's Specials</h1>
                             <button>Our Menu</button>
                         </section>
                         <section>
-                            
+                            <MenuItemList/>
                         </section>
                     </article>
                 </section>
@@ -19,6 +21,7 @@ function Main(){
                     <article>
                         <section>
                             <h1>Testimonials</h1>
+                            <ReviewItemList/>
                         </section>
                     </article>
                 </section>
@@ -27,7 +30,7 @@ function Main(){
                         <section>
                             <h1>Little Lemon</h1>
                             <h2>Chicago</h2>
-                            <p class='leadText'>
+                            <p className='leadText'>
                                 Little Lemon is a charming neighboorhood
                                 bistro that serves simple food and classic
                                 cocktails in a lively but casual environment.

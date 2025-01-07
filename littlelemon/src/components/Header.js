@@ -1,7 +1,7 @@
 import image from '../images/restauranfood.jpg'
 import {Display} from './providers/ReservationFormHider'
 function Header(){
-    const {display,toggleDisplay} = Display()
+    const {toggleDisplay} = Display()
     return (
         <header id='head'>
             <article>

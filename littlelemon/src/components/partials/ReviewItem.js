@@ -40,7 +40,7 @@ export function ReviewItem({name, qoute, img}){
 export function ReviewItemList(){
     return (
         <article className='ReviewItemList'>
-            {objects.map(props=><ReviewItem {...props}/>)}
+            {objects.map(props=><ReviewItem key={props.name} {...props}/>)}
         </article>
     )
 }

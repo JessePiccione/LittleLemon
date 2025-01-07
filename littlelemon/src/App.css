@@ -3,6 +3,7 @@
   margin:0;
   text-shadow:1px 2px 2px #33333344;
 }
+
 h1, h2{
   font-family: "Markazi Text";
   margin:1rem;
@@ -75,14 +76,16 @@ button{
   background-color: #F4CE14;
   text-shadow:none;
   box-shadow: 1px 2px 2px #33333344;
+  display:flex;
 }
 #root{
   display:grid;
   grid-template-areas:'nav nav nav'
                       'head head head'
+                      'reserve reserve reserve'
                       'main main main'
                       'footer footer footer';
-  grid-template-rows: min-content min-content 1fr min-content;
+  grid-template-rows: min-content min-content auto 1fr min-content;
   grid-template-columns: 10px 1fr 10px;
   min-height:100vh;
   background-color:#edefee;
@@ -91,8 +94,10 @@ button{
   grid-area:nav;
   width:100%;
   background-color:#edefee;
-  height:fit-content
+  height:fit-content;
+  z-index:10;
 }
+#reservations > article,
 #nav > article,
 #head > article,
 #footer > article,
@@ -127,6 +132,7 @@ button{
 #head{
   grid-area:head;
   background:#495e57;
+  z-index:10;
 }
 #head img{
   margin:1rem;
@@ -136,7 +142,7 @@ button{
   object-fit:cover;
   transform:translate3d(0,2.5rem,0);
   border:2px solid #efedee;
-  box-shadow: 1px 2px 2px #33333344
+  box-shadow: 1px 2px 2px #33333344;
 }
 #head h1{
   color:#F4CE14;
@@ -152,7 +158,90 @@ button{
                        'about';
   grid-template-columns: 100%;
   grid-template-rows:fit-content fill fit-content;
+  z-index:0;
 }
+#reservations {
+  grid-area:reserve;
+  padding:1rem 0;
+  background-color:#333333;
+}
+#reservations * {
+  text-shadow:1px 2px 2px #000
+}
+#reservations svg {
+  height:18px;
+  fill:#333333;
+  align-self:center
+}
+#reservations section{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+}
+#reservations h1{
+  letter-spacing:normal;
+  color:#F4CE14;
+}
+#reservations form section{
+  margin:0rem 1rem;
+  flex-flow:column wrap;
+}
+#reservations label{
+  font-size:20px;
+  font-weight:600;
+}
+#reservations button {
+  box-shadow:1px 2px 2px #000;
+  text-shadow:none;
+}
+#reservations option{
+  color:#333;
+}
+#reservations option:hover, #resevations option:checked{
+  background-color:#edefee;
+  color:#333;
+  border:2px solid orange;
+}
+#reservations input,
+#reservations select,
+#reservations textarea{
+  border-radius:16px;
+  height:60px;
+  line-height:60px;
+  box-shadow:1px 2px 2px #000;
+  text-shadow:none;
+  color:#333333;
+  padding:0 1rem 0 1rem;
+  width:calc(320px - 4rem - 4px);
+  font-family:'Karla';
+  font-weight:400;
+  font-size:16px;
+  border:2px solid #33333344;
+}
+#reservations select::-ms-expand{
+  display:none;
+}
+#reservations select{
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+#reservations p{
+  color:red;
+}
+input[type='number']{
+  width:100px;
+}
+input[type='text'] {
+  width:calc(320px - 2rem);
+}
+input[type='date']{
+  width:calc(320px - 2rem);
+}
+button[type='submit']{
+  margin:0;
+}
+
 #highlights{
   grid-area:high;
   background-color:#edefee;
@@ -331,4 +420,35 @@ img.ReviewItemRatingImage {
   border-radius:0%;
   box-shadow:none;
   text-shadow:1px 2px 2px #33333344;
+}
+.closed{
+  display:none;
+}
+.close{
+  display:none;
+  animation-fill-mode:backwards;
+  animation: closeReservationForm reverse ease-out 1s;
+}
+.show{
+  animation: openReservationForm ease-in 1s;
+}
+@keyframes openReservationForm {
+  0%{
+    display:inline;
+    margin-top:-100%;
+  }
+  100%{
+    display:inline;
+    margin-top:0rem
+  }
+}
+@keyframes closeReservationForm {
+  0%{
+    display:inline;
+    margin-top:-100%;
+  }
+  100%{
+    display:inline;
+    margin-top:0rem;
+  }
 }

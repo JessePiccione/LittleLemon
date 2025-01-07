@@ -43,7 +43,7 @@ export function MenuItem({name, price, description, img}){
 export function MenuItemList(){
     return (
         <article className='MenuItemList'>
-            {objects.map((props)=><MenuItem {...props}/>)}
+            {objects.map((props)=><MenuItem key={props.name}{...props}/>)}
         </article>
     )
 }

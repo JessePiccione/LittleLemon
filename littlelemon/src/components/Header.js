@@ -1,19 +1,21 @@
 import image from '../images/restauranfood.jpg'
+import {Display} from './providers/ReservationFormHider'
 function Header(){
+    const {display,toggleDisplay} = Display()
     return (
         <header id='head'>
             <article>
                 <section>
-                    <div>
+                    <section>
                         <h1>Little Lemon</h1>
                         <h2>Chicago</h2>
-                    </div>
+                    </section>
                     <p className='leadText'>
                         We are a family owned Mediterranean restaurant,
                         focused on traditional recipes served with a
                         modern twist.
                     </p>
-                    <button>Reserve a Table</button>
+                    <button onClick={toggleDisplay}>Reserve a Table</button>
                 </section>
                 <aside>
                     <img src={image} alt=''/>

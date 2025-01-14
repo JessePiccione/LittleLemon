@@ -51,8 +51,9 @@ li a:visited{
   color:#333333;
 }
 p{
+  max-width:65ch;
   font-family:'Karla';
-  font-size:'16px';
+  font-size:16px;
   font-weight:500;
   color:#333333;
 }
@@ -160,6 +161,41 @@ button{
   grid-template-rows:fit-content fill fit-content;
   z-index:0;
 }
+#BookingConfirmation *{
+  margin:0;
+}
+#BookingConfirmation{
+  position:fixed;
+  z-index:3000;
+  display:flex;
+  flex-flow:row wrap;
+  width:100%;
+  height:100%;
+  justify-content:center;
+  align-content:center;
+  background-color:#33333344;
+}
+#BookingConfirmation > article{
+  width:fit-content;
+  background-color:#495e57;
+  padding:1rem;
+  display:flex;
+  flex-flow:column wrap;
+  border:2px solid #edefee;
+  border-radius:16px;
+  box-shadow:1px 2px 2px#333;
+}
+#BookingConfirmation > article section{
+  display:flex;
+  flex-flow:row wrap;
+}
+#BookingConfirmation h1 {
+  color:#F4CE14;
+}
+#BookConfirmation p{
+  color: #FBDABB;
+
+}
 #reservations {
   grid-area:reserve;
   padding:1rem 0;
@@ -185,6 +221,7 @@ button{
 #reservations form section{
   margin:0rem 1rem;
   flex-flow:column wrap;
+  width:calc(320px - 4rem)
 }
 #reservations label{
   font-size:20px;
@@ -228,20 +265,14 @@ button{
 }
 #reservations p{
   color:red;
+  margin-bottom:1rem;
 }
 input[type='number']{
   width:100px;
 }
-input[type='text'] {
-  width:calc(320px - 2rem);
-}
-input[type='date']{
-  width:calc(320px - 2rem);
-}
 button[type='submit']{
   margin:0;
 }
-
 #highlights{
   grid-area:high;
   background-color:#edefee;
@@ -427,15 +458,16 @@ img.ReviewItemRatingImage {
 .close{
   display:none;
   animation-fill-mode:backwards;
-  animation: closeReservationForm reverse ease-out 1s;
+  animation: closeReservationForm reverse ease-in 1s;
 }
 .show{
-  animation: openReservationForm ease-in 1s;
+  animation: openReservationForm ease-out 1s;
 }
+
 @keyframes openReservationForm {
   0%{
     display:inline;
-    margin-top:-100%;
+    margin-top:-200%;
   }
   100%{
     display:inline;
@@ -445,7 +477,7 @@ img.ReviewItemRatingImage {
 @keyframes closeReservationForm {
   0%{
     display:inline;
-    margin-top:-100%;
+    margin-top:-200%;
   }
   100%{
     display:inline;

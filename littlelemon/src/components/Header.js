@@ -15,7 +15,7 @@ function Header(){
                         focused on traditional recipes served with a
                         modern twist.
                     </p>
-                    <button onClick={toggleDisplay}>Reserve a Table</button>
+                    <button onClick={toggleDisplay}>Reserve Table</button>
                 </section>
                 <aside>
                     <img src={image} alt=''/>
